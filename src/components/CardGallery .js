@@ -54,7 +54,10 @@ const MovieSection = ({ sectionTitle, movies }) => {
   );
 };
 
+
+
 const CardGallery = () => {
+  
   // Ejemplo de datos de películas por sección
   const comedyMovies = [
     { title: 'Movie 1', description: 'Description 1', imageUrl: 'https://example.com/movie1.jpg' },
