@@ -2,6 +2,7 @@
 import Sensei from './components/Sensei.js';
 import Navbar from './components/Navbar.js';
 import Movie from './components/Movie.js';
+import Carousel from './components/CardGallery .js';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <Sensei />
     <Movie />
+    <Carousel/>
     </div>
     
 
