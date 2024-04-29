@@ -1,19 +1,23 @@
 import React from 'react';
 
 function Movie({ movies }) {
-    return (
-      <div>
-        <ul>
+  if (!movies || !Array.isArray(movies)) {
+    return <div>No movies available</div>;
+  }
+
+  return (
+    <div>
+      <ul>
         {movies.map(movie => {
           return (
-            <div>
+            <div key={movie.id}>
               <li>ID: {movie.id}, Title: {movie.title}</li>
             </div>
           );
         })}
-        </ul>
-      </div>
-    );
+      </ul>
+    </div>
+  );
 }
 
 export default Movie;
