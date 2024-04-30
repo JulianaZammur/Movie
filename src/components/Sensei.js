@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Movie from './Movie';
 import CardGallery from './CardGallery.js';
+import Navbar from './Navbar.js';
 
 
 function Sensei() {
@@ -31,7 +32,12 @@ function Sensei() {
   };
 
   const handleChange = (event) => {
-    setMovieName(event.target.value);
+    setMovieName(event.target.value); 
+    if (event.target.value === "") {
+      handleReset();
+    } else {
+      getMoviesData();
+    }
   };
 
   const handleReset = () => {
@@ -41,14 +47,7 @@ function Sensei() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} />
-        <div>
-          <button type="submit">Get movies!</button>
-          <button type="reset" onClick={handleReset}>Reset</button>
-        </div>
-      </form>
-
+      <Navbar handleSubmit={handleSubmit} handleChange={handleChange} />
       {movieData && movieData[0] ? (
         <div className="movies-container">
           <Movie movies={movieData} />

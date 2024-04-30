@@ -1,26 +1,17 @@
 import React from 'react';
 import "../stylesheets/Navbar.css";
 
-function Navbar() {
+function Navbar({ handleSubmit, handleChange }) {
   return (
     <nav className="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">PeliculApp</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
+        <a className="navbar-brand" href="#">
+          <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" className="d-inline-block align-text-top" />
+          PeliculApp
+        </a>
         <div className="collapse navbar-collapse" id="navbarsExample02">
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Peliculas</a>
-            </li>
-          </ul>
-          <form className="d-flex">
-            <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
+          <form className="d-flex ms-auto" onSubmit={handleSubmit}>
+            <input className="form-control" type="search" placeholder="Search" aria-label="Search" onChange={handleChange} />
           </form>
         </div>
       </div>
