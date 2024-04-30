@@ -1,6 +1,5 @@
-import React from 'react';
-import Movie from './Movie';
 import { useState } from 'react';
+import Movie from './Movie';
 
 function Sensei() {
   const [movieData, setMovieData] = useState(null);
