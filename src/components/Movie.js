@@ -13,7 +13,7 @@ function Movie({ movies }) {
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           {movies.map(movie => (
             <div key={movie.id} className="col">
-              <div className="card shadow-sm">
+              <div className="card shadow-sm h-100">
                 <img className="bd-placeholder-img card-img-top" width="100%" height="225" src={rutaBaseImagenes + movie.backdrop_path} alt="Movie Poster" />
                 <div className="card-body">
                   <h5 className="card-title">{movie.title}</h5>
@@ -23,7 +23,7 @@ function Movie({ movies }) {
                       <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
                       <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
                     </div>
-                    <small className="text-muted">9 mins</small>
+                    <small className="badge bg-warning text-white"><span>IMDb {movie.vote_average}</span></small>
                   </div>
                 </div>
               </div>

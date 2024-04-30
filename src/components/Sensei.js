@@ -21,7 +21,7 @@ function Sensei() {
       }
     };
 
-    fetch(`https://api.themoviedb.org/3/search/movie?query=${movieName}&include_adult=false&language=en-US&page=1`, options)
+    fetch(`https://api.themoviedb.org/3/search/movie?query=${movieName}&include_adult=false&page=1&language=es`, options)
       .then(response => response.json())
       .then(response => {
         setMovieData(response.results); // asigna los resultados al estado movieData
