@@ -1,12 +1,13 @@
 import React from 'react';
 import "../stylesheets/Navbar.css";
-
+import '@fortawesome/fontawesome-free/css/all.css';
 function Navbar({ handleSubmit, handleChange }) {
   return (
+    
     <nav className="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" className="d-inline-block align-text-top" />
+        <i class="fa-solid fa-film"></i>
           PeliculApp
         </a>
         <div className="collapse navbar-collapse" id="navbarsExample02">

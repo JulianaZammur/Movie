@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
+import Modal from './Modal';
 
 const rutaBaseImagenes = 'https://image.tmdb.org/t/p/w500/';
 
 const GenreMovies = ({ genre }) => {
   const [movies, setMovies] = useState([]);
-
+  
   useEffect(() => {
     fetchMoviesByGenre(genre.id);
   }, [genre.id]);
@@ -31,6 +31,12 @@ const GenreMovies = ({ genre }) => {
     }
   };
 
+
+    const handleButtonClick = (url) => {
+      // Abre la página en una nueva pestaña del navegador
+      window.open(url, '_blank');
+    };
+
   return (
     <>
       <h2>{genre.name}</h2>
@@ -47,8 +53,8 @@ const GenreMovies = ({ genre }) => {
                     <p className="card-text">{movie.overview}</p>
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="btn-group">
-                        <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
+                        <button type="button" className="btn btn-sm btn-outline-secondary" onClick={() => handleButtonClick(movie.video)} >View</button>
+                        
                       </div>
                       <small className="badge bg-warning text-white"><span>IMDb {movie.vote_average}</span></small>
                     </div>
